@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Project Cecilia - Songs</title>
+
+  <link rel="stylesheet" href="../song.css">
+
+</head>
+
+
+<body>
+
+
+  <header>
+
+    <div class="logo">
+      Project Cecilia
+    </div>
+
+
+    <button class="menu-btn" id="menuBtn">
+      ☰
+    </button>
+
+
+    <nav id="menu">
+
+      <a href="cecilia_home.html">
+        Mass
+      </a>
+
+      <a href="#">
+        About Us
+      </a>
+
+      <a href="#">
+        Terms of Use
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <input
+      type="search"
+      id="searchBar"
+      class="search"
+      placeholder="Search songs..."
+    >
+
+
+    <div id="songList"></div>
+
+
+  </main>
+
+
+
+  <div class="page-nav">
+
+    <a href="jingtyrwa.html">
+      ← Back
+    </a>
+
+    <a href="kokpa.html">
+      Next →
+    </a>
+
+  </div>
+
+
+
+  <footer>
+
+    © 2026 Project Cecilia
+
+  </footer>
+
+
+
+  <script ">
+  ```javascript
+/* =========================
+   SONG DATABASE
+========================= */
+
+
+const songs = [
+
+  {
+    title: "Morning Light",
+
+    lyrics: `Morning light is shining,
+Hope is in our hearts.
+We walk together,
+Never far apart.
+
+Guide us through the day,
+Keep our hearts sincere.
+With every step we take,
+We know that You are near.`
+  },
+
+
+  {
+    title: "Song of Peace",
+
+    lyrics: `Let there be peace in every heart,
+Let kindness guide our way.
+Let every voice become a song,
+That brings us hope today.`
+  },
+
+
+  {
+    title: "Walking in Faith",
+
+    lyrics: `We walk in faith together,
+With courage through the night.
+We trust the road before us,
+And follow toward the light.`
+  }
+
+];
+
+
+
+/* =========================
+   MENU
+========================= */
+
+
+const menuBtn = document.getElementById("menuBtn");
+
+const menu = document.getElementById("menu");
+
+
+menuBtn.addEventListener("click", function () {
+
+  menu.classList.toggle("show");
+
+});
+
+
+
+/* =========================
+   DISPLAY SONGS
+========================= */
+
+
+const searchBar = document.getElementById("searchBar");
+
+const songList = document.getElementById("songList");
+
+
+function displaySongs(songArray) {
+
+  songList.innerHTML = "";
+
+
+  if (songArray.length === 0) {
+
+    songList.innerHTML = "<p>No songs found.</p>";
+
+    return;
+
+  }
+
+
+  songArray.forEach(function (song) {
+
+
+    const article = document.createElement("article");
+
+    article.className = "song";
+
+
+    const title = document.createElement("h2");
+
+    title.textContent = song.title;
+
+
+    const lyrics = document.createElement("div");
+
+    lyrics.className = "lyrics";
+
+    lyrics.textContent = song.lyrics;
+
+
+    article.appendChild(title);
+
+    article.appendChild(lyrics);
+
+
+    songList.appendChild(article);
+
+  });
+
+}
+
+
+
+/* =========================
+   SEARCH
+========================= */
+
+
+searchBar.addEventListener("input", function () {
+
+
+  const query = searchBar.value.toLowerCase();
+
+
+  const filteredSongs = songs.filter(function (song) {
+
+
+    return (
+
+      song.title.toLowerCase().includes(query) ||
+
+      song.lyrics.toLowerCase().includes(query)
+
+    );
+
+  });
+
+
+  displaySongs(filteredSongs);
+
+});
+
+
+
+/* SHOW SONGS WHEN PAGE LOADS */
+
+displaySongs(songs);
+```
+</script>
+
+
+</body>
+
+</html>
+```
