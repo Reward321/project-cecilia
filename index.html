@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Cecilia</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        Project Cecilia
+    </div>
+
+    <div class="search-box">
+        <input
+            type="number"
+            id="searchInput"
+            placeholder="Song number"
+            min="1"
+        >
+
+        <button id="searchBtn">
+            Search
+        </button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">
+        ☰
+    </button>
+
+</header>
+
+
+<nav class="side-menu" id="sideMenu">
+
+    <button class="close-btn" id="closeBtn">
+        ×
+    </button>
+
+    <a href="index.html">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#privacy">Privacy Policy</a>
+
+</nav>
+
+
+<main>
+
+    <section class="song-container">
+
+        <div id="loading">
+            Loading song...
+        </div>
+
+        <div id="song"></div>
+
+    </section>
+
+
+    <section id="about" class="info-section">
+
+        <h2>About Project Cecilia</h2>
+
+        <p>
+            Project Cecilia is a digital collection of Catholic hymns
+            designed to make sacred music easier to search and access.
+        </p>
+
+    </section>
+
+
+    <section id="privacy" class="info-section">
+
+        <h2>Privacy Policy</h2>
+
+        <p>
+            Project Cecilia does not require users to create an account
+            to browse songs. No personal information is intentionally
+            collected through this website.
+        </p>
+
+    </section>
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
