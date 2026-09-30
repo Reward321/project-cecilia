@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Project Cecilia Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        Cecilia Admin
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="song-container">
+
+        <h1>Add Song</h1>
+
+        <br>
+
+
+        <label for="songNumber">
+            Song Number
+        </label>
+
+        <br>
+
+        <input
+            type="number"
+            id="songNumber"
+            min="1"
+            placeholder="Example: 25"
+            style="width:100%;padding:12px;margin:10px 0 20px;"
+        >
+
+
+        <label for="lyrics">
+            Song Lyrics
+        </label>
+
+        <br>
+
+        <textarea
+            id="lyrics"
+            placeholder="Write the song here..."
+            style="width:100%;height:350px;padding:12px;margin-top:10px;resize:vertical;"
+        ></textarea>
+
+
+        <br><br>
+
+
+        <button
+            id="submitBtn"
+            style="padding:12px 20px;cursor:pointer;"
+        >
+            Add Song
+        </button>
+
+
+        <p id="status" style="margin-top:20px;"></p>
+
+    </section>
+
+</main>
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
